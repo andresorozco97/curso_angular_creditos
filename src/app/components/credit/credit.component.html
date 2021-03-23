@@ -1,0 +1,13 @@
+<div class="container">
+
+  <div class="row" *ngIf="credit">
+    <h2>Credito {{credit.id}}</h2>
+    <p>{{credit.customer.name}} {{credit.customer.last}}</p>
+    <p>{{credit.value}}</p>
+  </div>
+
+  <div class="row">
+    <app-payments [payments]="credit.payment"></app-payments>
+  </div>
+
+</div>
