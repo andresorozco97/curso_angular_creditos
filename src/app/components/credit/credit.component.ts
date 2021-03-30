@@ -9,10 +9,19 @@ import { Credit } from 'src/app/model/credit';
 export class CreditComponent implements OnInit {
 
   @Input() credit: Credit;
+  showModal : boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getModal(data){
+    this.showModal = data;
+  }
+
+  closeModal(){
+    this.showModal = false;
   }
 
 }

@@ -2,8 +2,8 @@
 <div class="table-payments" *ngIf="payments">
   <table style="width:100%">
     <tr *ngFor="let item of payments">
-      <td>{{item.date}}</td>
-      <td>{{item.value}}</td>
+      <td>{{item.date | date }}</td>
+      <td><a (click)="showPayment()">{{item.value | currency : '$' : 'symbol' : '1.0-0' }}</a></td>
     </tr>
   </table>
 </div>

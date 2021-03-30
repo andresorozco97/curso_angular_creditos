@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Payment } from 'src/app/model/credit';
 
 @Component({
@@ -9,11 +9,16 @@ import { Payment } from 'src/app/model/credit';
 export class PaymentsComponent implements OnInit {
 
   @Input() payments: Payment;
+  @Output() OutshowPayment = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.payments)
+  }
+
+  showPayment() {
+    console.log('true');
+    this.OutshowPayment.emit(true);
   }
 
 }

@@ -1,13 +1,23 @@
 <div class="container">
 
-  <div class="row" *ngIf="credit">
-    <h2>Credito {{credit.id}}</h2>
-    <p>{{credit.customer.name}} {{credit.customer.last}}</p>
-    <p>{{credit.value}}</p>
+  <div class="container-info">
+
+    <div class="row" *ngIf="credit">
+      <h2>Credito {{credit.id}}</h2>
+      <p>{{credit.customer.name}} {{credit.customer.last}}</p>
+      <p>{{credit.value | currency : '$' : 'symbol' : '1.0-0' }}</p>
+    </div>
+
+    <div class="row">
+      <app-payments [payments]="credit.payment" (OutshowPayment)="getModal($event)"></app-payments>
+    </div>
+
   </div>
 
-  <div class="row">
-    <app-payments [payments]="credit.payment"></app-payments>
+  <div #modal class="container-modal" *ngIf="showModal">
+    <div class="container-modal-card">
+      <p>Modal</p>
+      <button (click)="closeModal()">X</button>
+    </div>
   </div>
-
 </div>
