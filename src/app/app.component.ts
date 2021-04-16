@@ -8,25 +8,4 @@ import { Credit } from './model/credit';
 })
 export class AppComponent {
 
-  credit : Credit[] = [{
-    id : '12345',
-    customer : { name : 'Andres', last: 'Orozco' },
-    value : 500000,
-    payment: [
-      { date: new Date(), value: 250000 },
-      { date: new Date(), value: 250000 },
-      { date: new Date(), value: 250000 }
-    ]
-  },
-  {
-    id : '98765',
-    customer : { name : 'Julian', last: 'Alvarez' },
-    value : 500000,
-    payment: [
-      { date: new Date(), value: 250000 },
-      { date: new Date(), value: 250000 },
-      { date: new Date(), value: 250000 }
-    ]
-  }
-]
 }

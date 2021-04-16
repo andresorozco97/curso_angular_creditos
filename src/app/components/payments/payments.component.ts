@@ -8,17 +8,11 @@ import { Payment } from 'src/app/model/credit';
 })
 export class PaymentsComponent implements OnInit {
 
-  @Input() payments: Payment;
-  @Output() OutshowPayment = new EventEmitter<boolean>();
+  @Input() payments: Payment[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  showPayment() {
-    console.log('true');
-    this.OutshowPayment.emit(true);
   }
 
 }

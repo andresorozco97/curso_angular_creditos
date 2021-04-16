@@ -8,20 +8,38 @@ import { Credit } from 'src/app/model/credit';
 })
 export class CreditComponent implements OnInit {
 
-  @Input() credit: Credit;
-  showModal : boolean = false;
+  credit : Credit[] = [
+    {
+      id : '12345',
+      customer : { name : 'Andres', last: 'Orozco' },
+      value : 500000,
+      payment: [
+        { date: new Date(), value: 250000 },
+        { date: new Date(), value: 250000 },
+        { date: new Date(), value: 250000 }
+      ]
+    },
+    {
+      id : '98765',
+      customer : { name : 'Julian', last: 'Alvarez' },
+      value : 500000,
+      payment: [
+        { date: new Date(), value: 250000 },
+        { date: new Date(), value: 250000 },
+        { date: new Date(), value: 250000 }
+      ]
+    },
+    {
+      id : '98765',
+      customer : { name : 'Julian', last: 'Alvarez' },
+      value : 500000,
+      payment: []
+    }
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  getModal(data){
-    this.showModal = data;
-  }
-
-  closeModal(){
-    this.showModal = false;
   }
 
 }

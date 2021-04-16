@@ -1,9 +1,21 @@
-<h2>Pagos</h2>
-<div class="table-payments" *ngIf="payments">
-  <table style="width:100%">
-    <tr *ngFor="let item of payments">
-      <td>{{item.date | date }}</td>
-      <td><a class="payment" (click)="showPayment()">{{item.value | currency : '$' : 'symbol' : '1.0-0' }}</a></td>
+<span class="text-title">Pagos</span>
+<div class="container-table">
+
+  <table class="table" *ngIf="payments.length > 0; else emptyPayments">
+    <tr>
+      <th class="text-table">Fecha</th>
+      <th>Valor</th>
+    </tr>
+    <tr *ngFor="let item of payments" routerLink="/modal">
+      <td class="text-paragraph">{{item.date | date }}</td>
+      <td class="text-paragraph"><a class="payment" (click)="showPayment()">{{item.value | currency : '$' : 'symbol' : '1.0-0' }}</a></td>
     </tr>
   </table>
+
+  <ng-template #emptyPayments>
+    <div class="table">
+      <span class="text-paragraph">No se encuentran pagos asociados</span>
+    </div>
+  </ng-template>
+
 </div>

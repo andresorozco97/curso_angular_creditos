@@ -1,37 +1,36 @@
 .container {
   width: 100%;
   min-height: 100%;
+  background: #8E0E00;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 2rem 0px;
 
   &-info {
     background-color: white;
-    border: 1px solid blue;
-    border-radius: 10px;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-
-    .row{
-      flex-direction: row;
-      display: flex;
-      width: 100%;
-
-      .col-left{
-        width: 50%;
-      }
-      .col-rigth{
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1.5rem auto;
+    width: 50%;
   }
 
-  &-balance {
-    width: 50%;
-    border: 1px solid #c3c3c3;
-    background-color: #d4d4d4;
-    border-radius: 10px;
-    text-align: center;
+  &-up {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+
+    .col{
+      width: 50%;
+      display: grid;
+
+      &-right {
+        text-align: center;
+        background-color: #f1f1f1;
+        margin: 2px 15px;
+        border-radius: 0.5rem;
+
+      }
+    }
   }
 
   &-modal {
@@ -44,12 +43,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &-card{
-      background-color: white;
-      width: 40%;
-      height: 40%;
-      z-index: 1;
-    }
   }
 }

@@ -2,30 +2,24 @@
 
   <div class="container-info" *ngFor="let element of credit">
 
-    <div class="row" *ngIf="credit">
-      <div class="col-left">
-        <h2>Credito {{element.id}}</h2>
-        <p>{{element.customer.name}} {{element.customer.last}}</p>
-        <p>{{element.value | currency : '$' : 'symbol' : '1.0-0' }}</p>
+    <div class="container-up" *ngIf="credit">
+      <div class="col col-left">
+        <span class="text-title">Credito {{element.id}}</span>
+        <span class="text-paragraph">{{element.customer.name}} {{element.customer.last}}</span>
+        <span class="text-paragraph">{{element.value | currency : '$' : 'symbol' : '1.0-0' }}</span>
       </div>
-      <div class="col-rigth">
-        <div class="container-balance">
-          <h2>Saldo Pendiente</h2>
-          <p>200.000</p>
-        </div>
+      <div class="col col-right">
+        <span class="text-title">Saldo Pendiente</span>
+        <span class="text-paragraph">200.000</span>
       </div>
     </div>
 
-    <div class="row">
-      <app-payments [payments]="element.payment" (OutshowPayment)="getModal($event)"></app-payments>
+    <hr>
+
+    <div class="container-down">
+      <app-payments [payments]="element.payment"></app-payments>
     </div>
 
   </div>
 
-  <div #modal class="container-modal" *ngIf="showModal">
-    <div class="container-modal-card">
-      <p>Modal</p>
-      <button (click)="closeModal()">X</button>
-    </div>
-  </div>
 </div>
